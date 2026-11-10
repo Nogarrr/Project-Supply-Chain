@@ -1,20 +1,25 @@
-# 📦 Optimisation et Analyse de la Supply Chain
+# 📦 Anticipation et Prédiction des Retards de Livraison (Supply Chain)
 
 ## 🎯 Objectif du projet
-Ce projet vise à analyser les données logistiques et commerciales afin d'identifier des leviers d'excellence opérationnelle. L'objectif est de diagnostiquer les inefficacités, d'optimiser les processus de livraison et de proposer des recommandations stratégiques.
+Comment prédire les risques de retard de livraison en fonction des caractéristiques des commandes (produits, régions, modes d'expédition) ? 
+
+Ce projet vise à répondre à cet enjeu majeur pour la Supply Chain : **améliorer le taux de service en anticipant les perturbations au lieu de les subir**. L'objectif final est de modéliser ce risque logistique et d'identifier les facteurs opérationnels qui influencent le plus ces retards.
 
 ## 📊 Jeu de données
-L'analyse repose sur le fichier `DataCoSupplyChainDataset.csv` (180 520 lignes), qui contient des données de bout en bout sur :
-* Le provisionnement et les expéditions.
-* Les statuts de livraison (retards, annulations).
-* Les transactions commerciales et la performance financière par région.
+L'analyse repose sur le fichier `DataCoSupplyChainDataset.csv` (plus de 180 000 lignes), qui offre une vue granulaire de bout en bout sur :
+* **Les caractéristiques des commandes** : catégories de produits, prix, volumes.
+* **La logistique spatiale** : régions, pays de départ et d'arrivée.
+* **L'exécution** : modes d'expédition, délais de livraison prévus vs réels, statuts.
 
-## 🛠️ Méthodologie & Technologies
-* **Nettoyage et exploration des données** : Python (Pandas)
-* **Visualisation** : Matplotlib / Seaborn
-* **Analyse** : Modélisation des flux et détection des goulots d'étranglement
+## 🛠️ Méthodologie & Technologies (Machine Learning)
+* **Préparation des données (EDA & Feature Engineering)** : Python (Pandas, Numpy)
+* **Visualisation** : Plotly / Seaborn / Matplotlib
+* **Modélisation prédictive (Classification)** : Scikit-Learn
+  * Comparaison de plusieurs modèles de classification (ex: Régression Logistique, Random Forest, XGBoost) pour catégoriser les commandes en "À l'heure" ou "En retard".
+  * Analyse de l'importance des variables (Feature Importance) pour isoler les causes racines des retards.
 
 ## 🚀 Prochaines étapes
-1. Nettoyage des valeurs manquantes et formatage des dates.
-2. Création de KPIs (Key Performance Indicators) sur les délais de livraison.
-3. [À compléter avec vos futures analyses]
+1. **Data Cleaning** : Gestion des valeurs manquantes, formatage des dates et création de la variable cible (Target) basée sur l'écart entre le délai réel et prévu.
+2. **Analyse Exploratoire (EDA)** : Cartographie des retards par région et par mode d'expédition.
+3. **Feature Engineering** : Encodage des variables catégorielles et normalisation.
+4. **Machine Learning** : Entraînement des modèles, évaluation (Accuracy, F1-Score, ROC-AUC) et restitution métier.
